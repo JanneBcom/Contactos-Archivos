@@ -17,7 +17,7 @@ var f = {
 		if(f.action == 0)
         	fileEntry.createWriter(f.gotFileWriter, f.fail); //obtiene la entrada ala archivo mediante un objeto y crea un apuntador, para poder crear dentro del archivo
 		else
-			readAsText(fileEntry);
+			fileEntry.file(f.readAsText);
     },
 	gotFileWriter : function(writer) {
         alert('archivo escrito');
