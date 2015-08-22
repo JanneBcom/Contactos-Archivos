@@ -8,13 +8,13 @@ var f = {
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, f.gotFS, f.fail); //Pide accseo al sistema de archivos indica si el archivo sera creado permanente o temporalmente, funciones de satisfaccion y error
 	},
 	gotFS : function(fileSystem) {
-  		if(f.action == =)
+  		if(f.action == 0)
 			fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, f.gotFileEntry, f.fail); // va a la raiz y obtiene los permisos de un archivo indicado, indica si exite y lo abre sino lo crea y lo abre y lo defines como esxclusi o no
 		else
 			fileSystem.root.getFile("readme.txt", null, f.gotFileEntry, f.fail);
     },
 	gotFileEntry : function(fileEntry) {
-		if(f.action == =)
+		if(f.action == 0)
         	fileEntry.createWriter(f.gotFileWriter, f.fail); //obtiene la entrada ala archivo mediante un objeto y crea un apuntador, para poder crear dentro del archivo
 		else
 			readAsText(fileEntry);
