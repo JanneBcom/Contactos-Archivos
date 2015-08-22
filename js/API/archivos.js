@@ -4,7 +4,7 @@ var f = {
 	action: null,
 	createFile : function(){
 		f.action=0;
-		f.txt = $('#aSEnd').val();
+		f.txt = $('#aSend').val();
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, f.gotFS, f.fail); //Pide accseo al sistema de archivos indica si el archivo sera creado permanente o temporalmente, funciones de satisfaccion y error
 	},
 	gotFS : function(fileSystem) {
@@ -20,8 +20,11 @@ var f = {
 			fileEntry.file(f.readAsText);
     },
 	gotFileWriter : function(writer) {
-        alert('archivo escrito');
-        writer.write(f.txt);
+        writer.onwriteend = function(ever){
+			alert('archivo escrito');
+		};
+		
+		writer.write(f.txt);
     },
 
 	readFile : function(){
