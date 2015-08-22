@@ -9,6 +9,8 @@ var fn = {
 	init : function(){
 		$('#ncSend').tap(fn.crearContacto);
 		$('#cListar').tap(cn.findContacts);
+		$('#aEscribir').tap(f.createFile);
+		$('#aLeer').tap(f.readFile);
 	},
 	crearContacto : function(){
 		var n = $('#ncNom').val();
