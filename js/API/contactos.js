@@ -46,7 +46,7 @@ var cn = {
 	options.filter   = "Prueba";
 	options.multiple = true;
 	//options.desiredFields = [navigator.contacts.fieldType.id,navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers];
-	var fields       = [navigator.contacts.fieldType.nickname, navigator.contacts.fieldType.name];
+	var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
 	navigator.contacts.find(fields,cn.onFound, cn.onError, options);
 	}	
 };
